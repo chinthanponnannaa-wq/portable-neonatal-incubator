@@ -60,9 +60,7 @@ Below is an image of the actual working prototype of the incubator developed dur
 
 Below is a short demonstration of the working prototype 👇  
 
-<video src="media/video.mp4" controls="controls" width="700">
-  Your browser does not support the video tag.
-</video>
+![Prototype Demo](media/prototype.gif)
 
 ---
 
