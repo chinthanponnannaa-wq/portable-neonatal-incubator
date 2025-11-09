@@ -37,7 +37,7 @@ Below is a simplified diagram of the neonatal incubator system.
 - **N Likitha**  
 - **Sanjana B R**  
 
-**Mentor:** *Mr. Shreeshayana R*  
+**Mentor:** *Prof. Shreeshayana R*  
 **Institution:** *ATME College of Engineering*  
 **Academic Year:** *2025–2026*  
 
