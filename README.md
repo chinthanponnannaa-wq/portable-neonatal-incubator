@@ -56,43 +56,6 @@ Below is an image of the actual working prototype of the incubator developed dur
 
 ---
 
-## 📹 Prototype Demo
-
-Below is a short demonstration of the working prototype 👇
-
-<!--
-  Primary (GitHub-friendly) approach: GIF.
-  If you already have media/prototype.gif in your repo, GitHub will display it inline.
--->
-![Prototype Demo](media/prototype.gif)
-
----
-
-<!--
-  Optional HTML <video> fallback. GitHub's README renderer will NOT play MP4 inline;
-  it will typically show a download link instead. But other renderers (or local previews)
-  may show an inline player.
--->
-<details>
-<summary>Video fallback / local preview (click to expand)</summary>
-
-<video src="media/prototype.mp4" width="720" controls>
-  Your browser does not support the video tag. You can download the video here:
-  <a href="media/prototype.mp4">media/prototype.mp4</a>
-</video>
-
-</details>
-
----
-
-<!--
-  Optional: link to externally hosted playable video (YouTube / Google Drive / Vimeo).
-  Replace the URL below with your actual hosted video URL and a thumbnail if available.
--->
-**Watch the demo (playable):**  
-[![Watch Prototype Demo](images/video-thumbnail.jpg)](https://youtu.be/REPLACE_WITH_YOUR_VIDEO_ID)
-
----
 
 ## 📂 Repository Structure
 ```plaintext
@@ -119,11 +82,17 @@ portable-neonatal-incubator/
 │  └─ web-dashboard/
 │     └─ .gitkeep
 │
-├─ media/
-│  ├─ prototype.gif       <- demo GIF (recommended for GitHub README)
-│  └─ prototype.mp4       <- optional video file (fallback)
-│
 └─ images/
    ├─ cover.png
    ├─ circuit_diagram.png
    └─ model_photo.jpg
+
+
+
+## 📘 Contents
+- `B3_Major_Project_Phase_II.pptx` — project presentation  
+- `docs/` — poster & slides  
+- `hardware/` — circuit schematics & BOM  
+- `firmware/` — Arduino/ESP code  
+- `software/` — IoT dashboard web code  
+- `images/` — project cover images
