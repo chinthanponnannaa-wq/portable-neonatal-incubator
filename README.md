@@ -1,11 +1,63 @@
-# Portable Neonatal Incubator with Sleep Apnea Monitoring
+# Portable Neonatal Incubator with Sleep Apnea Monitoring 🍼💤
 
-IoT-based Portable Neonatal Incubator with Sleep Apnea Monitoring
+A low-cost, IoT-enabled neonatal incubator that monitors infant vitals such as
+temperature, humidity, and sleep apnea in real-time.
 
-This is a major project repository for an IoT-based **Portable Neonatal Incubator with Sleep Apnea Monitoring**.
+---
+
+## 🧠 Features
+- Real-time monitoring using DHT22, MAX30100, and Load Cell  
+- Sleep apnea detection via pulse oximetry  
+- Cloud data storage using ESP8266 (IoT integration)  
+- Compact and portable design for rural healthcare  
+
+---
+
+## 🛠️ Tech Stack
+- **Arduino IDE** (C/C++)  
+- **ESP8266** WiFi module  
+- **Sensors:** DHT22, MAX30100, Load Cell  
+- **Display:** OLED  
+- **Cloud Platforms:** ThingSpeak / Blynk  
+
+---
+
+## 📊 System Overview
+
+Below is a simplified diagram of the neonatal incubator system.  
+It illustrates how the sensors, ESP8266, and cloud platform interact to collect and display real-time infant data.
+
+![System Diagram](images/methodology_diagram.png)
+
+---
+
+## 👨‍💻 Team
+
+- **Chinthan A D**  
+- **Kruthin H K**  
+- **N Likitha**  
+- **Sanjana B R**  
+
+**Mentor:** *Mr. Shreeshayana R*  
+**Institution:** *ATME College of Engineering*  
+**Academic Year:** *2025–2026*  
+
+---
+
+## 🔗 Presentation
+View the full project documentation [here](docs/B3_Major_Project_Phase_II.pptx).
+
+---
+
+## 📷 Prototype
+
+Below is an image of the actual working prototype of the incubator developed during the project phase.
+
+![Prototype](images/model_photo.jpg)
+
+---
 
 ## 📂 Repository Structure
-
 ```plaintext
 portable-neonatal-incubator/
 ├─ README.md
@@ -31,7 +83,10 @@ portable-neonatal-incubator/
 │     └─ .gitkeep
 │
 └─ images/
-   └─ cover.png
+   ├─ cover.png
+   ├─ circuit_diagram.png
+   └─ model_photo.jpg
+
 
 
 ## 📘 Contents
