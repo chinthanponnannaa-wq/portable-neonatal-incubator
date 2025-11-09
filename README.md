@@ -6,6 +6,7 @@ This is a major project repository for an IoT-based **Portable Neonatal Incubato
 
 ## 📂 Repository Structure
 
+```plaintext
 portable-neonatal-incubator/
 ├─ README.md
 ├─ LICENSE
