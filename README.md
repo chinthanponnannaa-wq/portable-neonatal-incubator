@@ -24,8 +24,7 @@ temperature, humidity, and sleep apnea in real-time.
 
 ## 📊 System Overview
 
-Below is a simplified diagram of the neonatal incubator system.  
-It illustrates how the sensors, ESP8266, and cloud platform interact to collect and display real-time infant data.
+Below is a simplified diagram of the neonatal incubator system.
 
 ![System Diagram](images/methodology_diagram.png)
 
