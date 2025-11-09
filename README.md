@@ -53,7 +53,7 @@ View the full project documentation [here](docs/B3_Major_Project_Phase_II.pptx).
 
 Below is an image of the actual working prototype of the incubator developed during the project phase.
 
-![Prototype](images/model_photo.jpg)
+![Prototype](images/prototype.jpg)
 
 ---
 
