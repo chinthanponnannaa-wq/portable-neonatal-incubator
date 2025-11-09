@@ -45,7 +45,7 @@ It illustrates how the sensors, ESP8266, and cloud platform interact to collect 
 ---
 
 ## 🔗 Presentation
-View the full project documentation [here](docs/B3_Major_Project_Phase_II.pptx).
+View the full project documentation [here](docs/slides.pdf).
 
 ---
 
