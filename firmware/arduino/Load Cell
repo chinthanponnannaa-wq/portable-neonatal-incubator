@@ -1,0 +1,77 @@
+/*****  LIBRARIES  *****/
+#include <HX711_ADC.h>          // by Olav Kallhovd  (Library Manager)
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>  // by Marco Schwarz   (Library Manager)
+
+/*****  HARDWARE PINS  *****/
+HX711_ADC LoadCell(6, 7);           // DT = D6, SCK = D7
+LiquidCrystal_I2C lcd(0x27, 16, 2); // change 0x27 if your LCD differs
+
+/*****  USER CONSTANTS  *****/
+const float CAL_FACTOR      = 1000.0; // 1 load-cell unit ≈ 1 gram (tune after calibration)
+const float EMPTY_THRESHOLD = 5.0;    // <= 5 g is treated as “no object”
+const byte  AVG_SAMPLES     = 10;     // running-average window size
+
+/*****  ROLLING AVERAGE BUFFER  *****/
+float buffer[AVG_SAMPLES];
+byte  bufIndex      = 0;
+bool  bufFilled     = false;
+
+void setup()
+{
+  Serial.begin(9600);                 // optional: watch raw values
+  LoadCell.begin();
+  LoadCell.setCalFactor(CAL_FACTOR);
+
+  /* 2-second stabilisation *and* zero-offset tare */
+  LoadCell.start(2000, true);
+
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(" Place object");
+}
+
+/* Returns the N-sample running average in grams */
+float getSmoothedGrams()
+{
+  LoadCell.update();                  // pulls in the latest sample
+  float reading = LoadCell.getData(); // one fresh reading
+
+  buffer[bufIndex++] = reading;       // save into circular buffer
+  if (bufIndex >= AVG_SAMPLES) {
+    bufIndex  = 0;
+    bufFilled = true;
+  }
+
+  byte n  = bufFilled ? AVG_SAMPLES : bufIndex;  // how many samples to sum
+  float sum = 0;
+  for (byte i = 0; i < n; i++) sum += buffer[i];
+
+  return sum / n;                     // averaged weight (grams)
+}
+
+void loop()
+{
+  float grams = getSmoothedGrams();
+
+  /* Suppress drift / noise around zero */
+  if (fabs(grams) <= EMPTY_THRESHOLD) {
+    grams = 0.0;
+  }
+
+  /* ---------- LCD OUTPUT ---------- */
+  lcd.clear();
+  if (grams == 0.0) {                 // platform empty
+    lcd.setCursor(0, 0);
+    lcd.print(" Place object");
+  } else {                            // valid weight
+    lcd.setCursor(0, 0);
+    lcd.print("Weight [kg]:");
+    lcd.setCursor(0, 1);
+    lcd.print(grams/1000, 1);              // one decimal (e.g. 123.4 g)
+  }
+
+  delay(200);                         // 5 updates per second
+}
